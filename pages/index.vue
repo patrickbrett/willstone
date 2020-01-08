@@ -17,7 +17,10 @@
           </p>
         </div>
         <div>
-          <img :src="require('@/assets/img/finn-book-cover.png')" />
+          <img
+            :src="require('@/assets/img/finn-book-cover.jpg')"
+            class="book-cover"
+          />
         </div>
         <div id="content-1-second">
           <p>
@@ -122,7 +125,7 @@ a {
 }
 
 .subscribe-area button {
-  background: #000;
+  background: #7c1e09;
   border: none;
   color: #fff;
   font-size: 36px;
@@ -132,11 +135,15 @@ a {
 
 .subscribe-area button:hover {
   cursor: pointer;
-  background: rgba(0, 0, 0, 0.8);
+  opacity: 0.8;
 }
 
 .subscribe-area button:focus {
   outline: none;
-  background: rgba(0, 0, 0, 0.8);
+  opacity: 0.8;
+}
+
+.book-cover {
+  width: 300px;
 }
 </style>

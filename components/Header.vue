@@ -4,40 +4,40 @@
     <nav>
       <ul>
         <nuxt-link to="/">
-          <li :class="'color-1' + (active === 'home' ? ' active' : '')">
+          <li :class="active === 'home' ? ' active' : ''">
             <div class="inside-border"></div>
             <div class="li-content">
               Home
-              <tick v-if="active === 'home'" class="tick" />
+              <icon-skull v-if="active === 'home'" class="tick" />
               <arrow-right v-else class="arrow-right" />
             </div></li
         ></nuxt-link>
         <nuxt-link to="/about">
-          <li :class="'color-2' + (active === 'about' ? ' active' : '')">
+          <li :class="active === 'about' ? ' active' : ''">
             <div class="inside-border"></div>
             <div class="li-content">
               About
-              <tick v-if="active === 'about'" class="tick" />
+              <icon-skull v-if="active === 'about'" class="tick" />
               <arrow-right v-else class="arrow-right" />
             </div>
           </li>
         </nuxt-link>
         <nuxt-link to="/books">
-          <li :class="'color-3' + (active === 'books' ? ' active' : '')">
+          <li :class="active === 'books' ? ' active' : ''">
             <div class="inside-border"></div>
             <div class="li-content">
               Books
-              <tick v-if="active === 'books'" class="tick" />
+              <icon-skull v-if="active === 'books'" class="tick" />
               <arrow-right v-else class="arrow-right" />
             </div>
           </li>
         </nuxt-link>
         <nuxt-link to="/news">
-          <li :class="'color-4' + (active === 'news' ? ' active' : '')">
+          <li :class="active === 'news' ? ' active' : ''">
             <div class="inside-border"></div>
             <div class="li-content">
               News
-              <tick v-if="active === 'news'" class="tick" />
+              <icon-skull v-if="active === 'news'" class="tick" />
               <arrow-right v-else class="arrow-right" />
             </div>
           </li>
@@ -51,22 +51,27 @@
       <a href="https://twitter.com/Willsimulated" target="_blank" rel="noopener"
         ><icon-twitter
       /></a>
+      <a href="https://reddit.com/r/willstone" target="_blank" rel="noopener"
+        ><icon-reddit
+      /></a>
     </div>
   </header>
 </template>
 
 <script>
 import ArrowRight from './icons/IconArrowRight'
-import Tick from './icons/IconTick'
+import IconSkull from './icons/IconSkull'
 import IconFacebook from './icons/IconFacebook'
 import IconTwitter from './icons/IconTwitter'
+import IconReddit from './icons/IconReddit'
 
 export default {
   components: {
     ArrowRight,
-    Tick,
+    IconSkull,
     IconFacebook,
-    IconTwitter
+    IconTwitter,
+    IconReddit
   },
   props: {
     active: String
@@ -75,13 +80,6 @@ export default {
 </script>
 
 <style scoped>
-:root {
-  --color-1: #2a3b73;
-  --color-2: #8d3c30;
-  --color-3: #1b662d;
-  --color-4: #861ea5;
-}
-
 header {
   background: rgba(0, 0, 0, 0.37);
   backdrop-filter: blur(24px);
@@ -125,6 +123,8 @@ nav ul li:hover {
 
 nav ul li.active {
   cursor: default;
+  position: relative;
+  top: 1px;
 }
 
 .li-content {
@@ -169,20 +169,8 @@ nav ul li:hover .inside-border {
   width: 100%;
 }
 
-nav ul li.color-1 .inside-border {
-  background: #2a3b73;
-}
-
-nav ul li.color-2 .inside-border {
-  background: #8d3c30;
-}
-
-nav ul li.color-3 .inside-border {
-  background: #1b662d;
-}
-
-nav ul li.color-4 .inside-border {
-  background: #861ea5;
+nav ul li .inside-border {
+  background: #7c1e09;
 }
 
 #social-links {
