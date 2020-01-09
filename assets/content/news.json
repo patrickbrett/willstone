@@ -1,5 +1,13 @@
 [
   {
+    "slug": "2020-01-09-third-article",
+    "title": "Third article",
+    "date": "2020-01-09T01:21:29.538Z",
+    "description": "This is the third article",
+    "tags": ["third", "article"],
+    "body": "Lorem ipsum **dolor sit amet**."
+  },
+  {
     "slug": "2020-01-09-article-2",
     "title": "Article 2",
     "date": "2020-01-09T00:44:50.292Z",

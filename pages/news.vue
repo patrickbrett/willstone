@@ -6,9 +6,12 @@
         <div id="content-1-first">
           <h1>News</h1>
           <div class="news-container">
-            <div v-for="article in newsArticles">
+            <div v-for="article in newsArticles" class="news-article">
               <h3>{{ article.title }}</h3>
-              <p>{{ article.body }}</p>
+              <p :title="formatDate(article.date)">
+                {{ relativeTime(article.date) }}
+              </p>
+              <p v-html="parseMarkdown(article.body)"></p>
             </div>
           </div>
         </div>
@@ -18,11 +21,32 @@
 </template>
 
 <script>
+import moment from 'moment'
+import { markdown } from 'markdown'
+
 import Header from '../components/Header'
+
+import newsArticles from '@/assets/content/news.json'
 
 export default {
   components: {
     siteHeader: Header
+  },
+  data() {
+    return {
+      newsArticles
+    }
+  },
+  methods: {
+    relativeTime(date) {
+      return moment('2020-01-09T00:44:20.713Z').fromNow()
+    },
+    formatDate(date) {
+      return new Date('2020-01-09T00:44:20.713Z').toLocaleString()
+    },
+    parseMarkdown(content) {
+      return markdown.toHTML(content)
+    }
   }
 }
 </script>
@@ -45,7 +69,7 @@ body {
   font-family: 'Athelas', serif;
   font-size: 36px;
   color: rgba(0, 0, 0, 0.68);
-  text-align: center;
+  text-align: left;
 }
 
 #content-1 {
@@ -70,5 +94,9 @@ p {
 a {
   color: rgba(0, 0, 0, 0.68);
   font-weight: bold;
+}
+
+.news-article {
+  border: 3px solid #000;
 }
 </style>
