@@ -1,0 +1,15 @@
+{
+  "title": "Social Links",
+  "facebook": {
+    "url": "https://facebook.com",
+    "enabled": true
+  },
+  "twitter": {
+    "url": "https://twitter.com/Willsimulated",
+    "enabled": true
+  },
+  "reddit": {
+    "url": "https://reddit.com/r/willstoneauthor",
+    "enabled": true
+  }
+}
