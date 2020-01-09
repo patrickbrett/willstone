@@ -6,10 +6,10 @@ media_folder: static/img
 public_folder: /img
 
 collections:
-  - name: 'blog'
+  - name: 'news'
     label: 'Blog'
     format: 'json'
-    folder: 'assets/content/blog'
+    folder: 'assets/content/news'
     create: true
     slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
     editor:
@@ -18,12 +18,13 @@ collections:
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Publish Date', name: 'date', widget: 'datetime' }
       - { label: 'Description', name: 'description', widget: 'string' }
+      - { label: 'Tags', name: 'tags', widget: 'list' }
       - { label: 'Body', name: 'body', widget: 'markdown' }
   - name: 'social-links'
     label: 'Social Links'
     format: 'json'
     folder: 'assets/content/social-links'
-    create: true
+    create: false
     slug: '{{slug}}'
     editor:
       preview: false
@@ -77,5 +78,4 @@ collections:
       preview: false
     fields:
       - { label: 'Title', name: 'title', widget: 'string' }
-      - { label: 'Description', name: 'description', widget: 'string' }
       - { label: 'Completion %', name: 'completion', widget: 'number' }
