@@ -42,4 +42,40 @@ collections:
           - label: 'Enabled'
             name: 'enabled'
             widget: 'boolean'
-            hint: 'Whether to show Facebook icon on the navigation bar'
+            hint: 'Whether to show the Facebook icon on the navigation bar'
+      - label: 'Twitter'
+        name: 'twitter'
+        widget: 'object'
+        fields:
+          - label: 'URL'
+            name: 'url'
+            widget: 'string'
+            hint: 'URL the Twitter icon links to'
+          - label: 'Enabled'
+            name: 'enabled'
+            widget: 'boolean'
+            hint: 'Whether to show the Twitter icon on the navigation bar'
+      - label: 'Reddit'
+        name: 'reddit'
+        widget: 'object'
+        fields:
+          - label: 'URL'
+            name: 'url'
+            widget: 'string'
+            hint: 'URL the Reddit icon links to'
+          - label: 'Enabled'
+            name: 'enabled'
+            widget: 'boolean'
+            hint: 'Whether to show the Reddit icon on the navigation bar'
+  - name: 'progress'
+    label: 'Progress'
+    format: 'json'
+    folder: 'assets/content/progress'
+    create: true
+    slug: '{{slug}}'
+    editor:
+      preview: false
+    fields:
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Description', name: 'description', widget: 'string' }
+      - { label: 'Completion %', name: 'completion', widget: 'number' }
