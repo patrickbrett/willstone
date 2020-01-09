@@ -45,13 +45,25 @@
       </ul>
     </nav>
     <div id="social-links">
-      <a href="https://facebook.com" target="_blank" rel="noopener"
+      <a
+        v-if="SocialLinks.facebook.enabled"
+        :href="SocialLinks.facebook.url"
+        target="_blank"
+        rel="noopener"
         ><icon-facebook
       /></a>
-      <a href="https://twitter.com/Willsimulated" target="_blank" rel="noopener"
+      <a
+        v-if="SocialLinks.twitter.enabled"
+        :href="SocialLinks.twitter.url"
+        target="_blank"
+        rel="noopener"
         ><icon-twitter
       /></a>
-      <a href="https://reddit.com/r/willstone" target="_blank" rel="noopener"
+      <a
+        v-if="SocialLinks.reddit.enabled"
+        :href="SocialLinks.reddit.url"
+        target="_blank"
+        rel="noopener"
         ><icon-reddit
       /></a>
     </div>
@@ -65,7 +77,14 @@ import IconFacebook from './icons/IconFacebook'
 import IconTwitter from './icons/IconTwitter'
 import IconReddit from './icons/IconReddit'
 
+import SocialLinks from '@/assets/content/social-links/social-links.json'
+
 export default {
+  data() {
+    return {
+      SocialLinks
+    }
+  },
   components: {
     ArrowRight,
     IconSkull,
