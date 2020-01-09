@@ -2,10 +2,6 @@
   "title": "Article 2",
   "date": "2020-01-09T00:44:50.292Z",
   "description": "Lorem Ipsum",
-  "tags": [
-    "lorem",
-    "ipsum",
-    "perspiciatis"
-  ],
+  "tags": ["lorem", "ipsum", "perspiciatis"],
   "body": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo."
 }

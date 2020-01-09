@@ -5,6 +5,12 @@
       <section id="content-1">
         <div id="content-1-first">
           <h1>News</h1>
+          <div class="news-container">
+            <div v-for="article in newsArticles">
+              <h3>{{ article.title }}</h3>
+              <p>{{ article.body }}</p>
+            </div>
+          </div>
         </div>
       </section>
     </div>
@@ -13,6 +19,12 @@
 
 <script>
 import Header from '../components/Header'
+
+import SocialLinks from '@/assets/content/social-links/social-links.json'
+
+const news = require('require-all')('@/assets/content/news')
+
+console.log(news)
 
 export default {
   components: {
@@ -57,11 +69,6 @@ body {
   /*float: left;*/
 }
 
-#content-1-second {
-  width: 35%;
-  /*float: right;*/
-}
-
 p {
   margin: 1em;
 }
@@ -69,44 +76,5 @@ p {
 a {
   color: rgba(0, 0, 0, 0.68);
   font-weight: bold;
-}
-
-.subscribe-area {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-}
-
-.subscribe-area input {
-  background: hsla(0, 0%, 74%, 0.48);
-  border: none;
-  padding: 20px;
-  font-size: 36px;
-  font-family: 'Athelas', serif;
-  width: 100%;
-}
-
-.subscribe-area input:focus {
-  outline: none;
-  background: hsla(0, 0%, 74%, 0.68);
-}
-
-.subscribe-area button {
-  background: #000;
-  border: none;
-  color: #fff;
-  font-size: 36px;
-  font-family: 'Athelas', serif;
-  min-width: 240px;
-}
-
-.subscribe-area button:hover {
-  cursor: pointer;
-  background: rgba(0, 0, 0, 0.8);
-}
-
-.subscribe-area button:focus {
-  outline: none;
-  background: rgba(0, 0, 0, 0.8);
 }
 </style>
