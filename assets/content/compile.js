@@ -7,35 +7,30 @@ const fs = require('fs')
  */
 const getFiles = (dir) => {
   const files = fs.readdirSync(dir)
-  let filelist = []
 
-  files.forEach((file) => {
+  return files.map((file) => {
     const fileContents = JSON.parse(
       fs.readFileSync(__dirname + `/news/${file}`, 'utf-8')
     )
-    const date = fileContents.date
     const slug = file
       .split('.')
       .slice(0, -1)
       .join('.')
 
-    const obj = { date, slug }
-
-    filelist.push(obj)
+    return { slug, ...fileContents }
   })
-  return filelist
 }
 
 const writeContent = async () => {
   const fileArray = await getFiles(__dirname + '/news/')
 
   // Order array by date (default asc)
-  const sortedArray = await fileArray.sort((a, b) => {
-    return new Date(a.date).getTime() - new Date(b.date).getTime()
-  })
+  const sortedArray = fileArray.sort(
+    (a, b) => new Date(a.date).getTime() - new Date(b.date).getTime()
+  )
 
   // Reverse array and write to JSON
-  const reversedArray = await sortedArray.reverse()
+  const reversedArray = sortedArray.reverse()
   const jsonContent = await JSON.stringify(reversedArray)
 
   fs.writeFile(__dirname + '/news.json', jsonContent, (err) => {
