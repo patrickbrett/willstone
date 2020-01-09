@@ -20,12 +20,6 @@
 <script>
 import Header from '../components/Header'
 
-import SocialLinks from '@/assets/content/social-links/social-links.json'
-
-const news = require('require-all')('@/assets/content/news')
-
-console.log(news)
-
 export default {
   components: {
     siteHeader: Header
