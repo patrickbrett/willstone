@@ -10,6 +10,6 @@
   },
   "reddit": {
     "url": "https://reddit.com/r/willstoneauthor",
-    "enabled": false
+    "enabled": true
   }
 }
