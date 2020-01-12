@@ -100,7 +100,7 @@ export default {
 
 <style scoped>
 header {
-  background: rgba(0, 0, 0, 0.37);
+  background: rgba(0, 0, 0, 0.37); /* consider changing opacity on scroll */
   backdrop-filter: blur(24px);
   color: #fff;
   height: 136px;
@@ -108,6 +108,8 @@ header {
   align-items: center;
   justify-content: flex-end;
   padding: 0 40px;
+  position: fixed;
+  width: calc(100vw - 80px);
 }
 
 h1 {
@@ -126,7 +128,7 @@ nav ul li {
   border: 2px solid #fff;
   width: 161px;
   height: 69px;
-  font-size: 28px;
+  font-size: 22px;
   text-transform: lowercase;
   display: inline-flex;
   align-items: center;
@@ -138,6 +140,8 @@ nav ul li {
 nav ul li:hover {
   cursor: pointer;
   border: none; /* can experiment with no border or having a border */
+  width: 165px;
+  height: 73px;
 }
 
 nav ul li.active {
@@ -159,10 +163,11 @@ li.active .li-content {
 .tick {
   opacity: 0;
   transition: 0.4s opacity;
+  height: 24px;
 }
 
 nav ul li:hover .li-content {
-  transform: translateX(0);
+  transform: none;
 }
 
 nav ul li:hover .arrow-right,
@@ -201,6 +206,11 @@ nav ul li .inside-border {
   transition: opacity 0.4s;
 }
 
+#social-links a * {
+  height: 60px;
+  width: 60px;
+}
+
 #social-links a:hover {
   opacity: 0.5;
 }
@@ -209,5 +219,45 @@ a {
   text-decoration: none;
   color: #fff;
   font-weight: 400;
+}
+
+@media only screen and (max-width: 1920px) {
+  header {
+    height: 74px;
+  }
+
+  h1 {
+    font-size: 36px;
+  }
+
+  nav ul li {
+    width: 100px;
+    height: 40px;
+    font-size: 18px;
+  }
+
+  nav ul li:hover {
+    width: 104px;
+    height: 44px;
+  }
+
+  #social-links {
+    margin-left: 10px;
+  }
+
+  #social-links a {
+    margin: 0 5px;
+  }
+
+  #social-links a * {
+    height: 40px;
+    width: 40px;
+  }
+
+  .arrow-right,
+  .tick {
+    height: 16px;
+    top: 2px;
+  }
 }
 </style>

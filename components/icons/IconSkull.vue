@@ -8,8 +8,6 @@
     xmlns:xlink="http://www.w3.org/1999/xlink"
   >
     <!-- Generator: Sketch 52.6 (67491) - http://www.bohemiancoding.com/sketch -->
-    <title>Shape</title>
-    <desc>Created with Sketch.</desc>
     <g
       id="Page-1"
       stroke="none"

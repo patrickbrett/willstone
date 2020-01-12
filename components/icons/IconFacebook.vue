@@ -8,8 +8,6 @@
     xmlns:xlink="http://www.w3.org/1999/xlink"
   >
     <!-- Generator: Sketch 52.6 (67491) - http://www.bohemiancoding.com/sketch -->
-    <title>f_logo_RGB-White_1024</title>
-    <desc>Created with Sketch.</desc>
     <defs>
       <polygon
         id="path-1"

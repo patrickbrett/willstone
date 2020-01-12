@@ -25,26 +25,28 @@ body {
 .container {
   width: 100vw;
   height: 100vh;
-  background: url('~assets/img/background-main.jpg') center;
+  background: url('~assets/img/background-main.jpg') fixed;
   background-size: cover;
 }
 
 .main-content {
   font-family: 'Athelas', serif;
-  font-size: 36px;
+  font-size: 24px;
   color: rgba(0, 0, 0, 0.68);
   text-align: center;
-  margin-bottom: 200px;
+  margin-top: 180px;
+  margin-bottom: 60px;
 }
 
 #content-1 {
-  margin-top: 200px;
   background: #f4f4f4;
   padding: 80px;
   overflow: auto;
   display: flex;
   justify-content: space-around;
-  align-items: center;
+  align-items: flex-start;
+  width: 80vw;
+  margin: 0 auto;
 }
 
 #content-1-first {
@@ -64,5 +66,8 @@ p {
 a {
   color: rgba(0, 0, 0, 0.68);
   font-weight: bold;
+}
+.container {
+  overflow: auto;
 }
 </style>
