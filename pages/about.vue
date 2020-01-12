@@ -1,14 +1,16 @@
 <template>
   <div class="container">
     <site-header active="about" />
-    <div class="main-content">
-      <section id="content-1">
-        <div id="content-1-first">
-          <h1>About</h1>
-          <span v-html="parseMarkdown(Content['about-1'])"></span>
-        </div>
-      </section>
-    </div>
+    <transition name="content" mode="out-in">
+      <div class="main-content">
+        <section id="content-1">
+          <div id="content-1-first">
+            <h1>About</h1>
+            <span v-html="parseMarkdown(Content['about-1'])"></span>
+          </div>
+        </section>
+      </div>
+    </transition>
   </div>
 </template>
 

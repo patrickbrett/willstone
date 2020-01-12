@@ -1,6 +1,6 @@
 [
   {
-    "slug": "2020-01-09-third-article",
+    "slug": "third-article",
     "title": "Third article",
     "date": "2020-01-09T01:21:29.538Z",
     "description": "This is the third article",
@@ -8,7 +8,7 @@
     "body": "Lorem ipsum **dolor sit amet**."
   },
   {
-    "slug": "2020-01-09-article-2",
+    "slug": "article-2",
     "title": "Article 2",
     "date": "2020-01-09T00:44:50.292Z",
     "description": "Lorem Ipsum",
@@ -16,7 +16,7 @@
     "body": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo."
   },
   {
-    "slug": "2020-01-09-article-1",
+    "slug": "article-1",
     "title": "Article 1",
     "date": "2020-01-09T00:44:20.713Z",
     "description": "Lorem Ipsum",

@@ -1,32 +1,34 @@
 <template>
   <div class="container">
     <site-header active="home" />
-    <div class="main-content">
-      <section id="content-1">
-        <div
-          id="content-1-first"
-          v-html="parseMarkdown(Content['homepage-1'])"
-        ></div>
-        <div>
-          <img
-            :src="require('@/assets/img/finn-book-cover.jpg')"
-            class="book-cover"
-          />
-        </div>
-        <div id="content-1-second">
-          <span v-html="parseMarkdown(Content['homepage-2'])"></span>
-          <div class="subscribe-area">
-            <input
-              type="text"
-              :placeholder="Content['free-chapters-download-box'].text"
+    <transition name="content" mode="out-in">
+      <div class="main-content">
+        <section id="content-1">
+          <div
+            id="content-1-first"
+            v-html="parseMarkdown(Content['homepage-1'])"
+          ></div>
+          <div>
+            <img
+              :src="require('@/assets/img/finn-book-cover.jpg')"
+              class="book-cover"
             />
-            <button>
-              {{ Content['free-chapters-download-box'].button }}
-            </button>
           </div>
-        </div>
-      </section>
-    </div>
+          <div id="content-1-second">
+            <span v-html="parseMarkdown(Content['homepage-2'])"></span>
+            <div class="subscribe-area">
+              <input
+                type="text"
+                :placeholder="Content['free-chapters-download-box'].text"
+              />
+              <button>
+                {{ Content['free-chapters-download-box'].button }}
+              </button>
+            </div>
+          </div>
+        </section>
+      </div>
+    </transition>
   </div>
 </template>
 
@@ -58,13 +60,14 @@ export default {
   width: 100%;
   display: flex;
   justify-content: space-between;
+  margin-top: 60px;
 }
 
 .subscribe-area input {
   background: hsla(0, 0%, 74%, 0.48);
   border: none;
-  padding: 20px;
-  font-size: 28px;
+  padding: 30px;
+  font-size: 20px;
   font-family: 'Athelas', serif;
   width: 100%;
 }
@@ -78,7 +81,7 @@ export default {
   background: #7c1e09;
   border: none;
   color: #fff;
-  font-size: 36px;
+  font-size: 24px;
   font-family: 'Athelas', serif;
   min-width: 240px;
 }

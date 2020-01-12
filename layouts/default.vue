@@ -70,4 +70,13 @@ a {
 .container {
   overflow: auto;
 }
+
+.content-enter-active,
+.content-leave-active {
+  transition: opacity 0.5s;
+}
+.content-enter,
+.content-leave-to {
+  opacity: 0;
+}
 </style>

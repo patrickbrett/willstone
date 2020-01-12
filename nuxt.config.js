@@ -1,3 +1,5 @@
+import fs from 'fs'
+
 export default {
   mode: 'universal',
   /*
@@ -63,5 +65,15 @@ export default {
      ** You can extend webpack config here
      */
     extend(config, ctx) {}
+  },
+  generate: {
+    routes() {
+      const news = JSON.parse(
+        fs.readFileSync(__dirname + '/assets/content/news.json')
+      )
+      const routes = news.map(({ slug }) => `/news/${slug}`)
+      console.log(routes)
+      return routes
+    }
   }
 }
