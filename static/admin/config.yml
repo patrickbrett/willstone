@@ -4,6 +4,7 @@ backend:
 
 media_folder: assets/img
 public_folder: /img
+logo_url: assets/img/content-manager-logo.png
 
 collections:
   - name: 'news'
