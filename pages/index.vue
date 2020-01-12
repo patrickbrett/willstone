@@ -8,7 +8,7 @@
             id="content-1-first"
             v-html="parseMarkdown(Content['homepage-1'])"
           ></div>
-          <div>
+          <div class="book-cover-container">
             <img
               :src="require('@/assets/img/finn-book-cover.jpg')"
               class="book-cover"
@@ -98,5 +98,25 @@ export default {
 
 .book-cover {
   width: 200px;
+}
+
+@media screen and (max-width: 1020px) {
+  #content-1 {
+    flex-direction: column;
+  }
+
+  #content-1-first {
+    width: 100%;
+    /*float: left;*/
+  }
+
+  #content-1-second {
+    width: 100%;
+    /*float: right;*/
+  }
+
+  .book-cover-container {
+    margin: 40px auto;
+  }
 }
 </style>

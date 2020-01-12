@@ -115,7 +115,7 @@ header {
 h1 {
   font-family: 'Cinzel Decorative', cursive;
   font-weight: 200;
-  font-size: 56px;
+  font-size: 48px;
   margin-right: auto;
 }
 
@@ -125,9 +125,9 @@ nav ul {
 
 nav ul li {
   font-family: 'Lexend Deca', Helvetica, sans-serif;
-  border: 2px solid #fff;
+  border: 2px solid rgba(255, 255, 255, 1);
   width: 161px;
-  height: 69px;
+  height: 59px;
   font-size: 22px;
   text-transform: lowercase;
   display: inline-flex;
@@ -135,24 +135,35 @@ nav ul li {
   justify-content: center;
   margin: 0 10px;
   position: relative;
+  transition: 0.4s border, 0.4s transform;
 }
 
-nav ul li:hover {
+nav ul li:hover,
+nav ul li.active {
   cursor: pointer;
-  border: none; /* can experiment with no border or having a border */
-  width: 165px;
-  height: 73px;
+  border: 2px solid rgba(124, 30, 9, 1); /* can experiment with no border or having a border */
+  transform: scale(1.05);
 }
 
 nav ul li.active {
   cursor: default;
   position: relative;
   top: 1px;
+  animation: 0.4s shrink forwards;
+}
+
+@keyframes shrink {
+  0% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(0.95);
+  }
 }
 
 .li-content {
   transform: translateX(10px);
-  transition: 0.4s transform;
+  transition: 0.4s all;
 }
 
 li.active .li-content {
@@ -166,13 +177,29 @@ li.active .li-content {
   height: 24px;
 }
 
-nav ul li:hover .li-content {
+nav ul li:hover .li-content,
+nav ul li.active .li-content {
   transform: none;
 }
 
 nav ul li:hover .arrow-right,
 nav ul li:hover .tick {
   opacity: 1;
+}
+
+nav ul li.active .tick {
+  opacity: 0;
+  animation: 0.4s fade-in forwards;
+}
+
+@keyframes fade-in {
+  /* TODO: would be perfect for GSAP morph */
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .inside-border {
@@ -189,7 +216,8 @@ nav ul li:hover .tick {
   z-index: 2;
 }
 
-nav ul li:hover .inside-border {
+nav ul li:hover .inside-border,
+nav ul li.active .inside-border {
   width: 100%;
 }
 
@@ -258,6 +286,28 @@ a {
   .tick {
     height: 16px;
     top: 2px;
+  }
+}
+
+@media only screen and (max-width: 1020px) {
+  header {
+    height: 280px;
+    flex-direction: column;
+    align-content: space-evenly;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.8);
+  }
+
+  h1 {
+    margin: 0 auto;
+  }
+
+  nav {
+    margin: 20px 0;
+  }
+
+  #social-links {
+    margin-left: 0;
   }
 }
 </style>

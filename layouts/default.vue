@@ -79,4 +79,10 @@ a {
 .content-leave-to {
   opacity: 0;
 }
+
+@media only screen and (max-width: 1020px) {
+  .main-content {
+    margin-top: 360px;
+  }
+}
 </style>
