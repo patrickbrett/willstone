@@ -84,14 +84,43 @@ collections:
     fields:
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Completion %', name: 'completion', widget: 'number' }
-  - name: 'pages' # may want a separate collection for each page to customise content
-    label: 'Page'
+  - name: 'content' # may want a separate collection for each page to customise content
+    label: 'Content'
     format: 'json'
-    folder: 'assets/content/pages'
+    folder: 'assets/content/content'
     create: true
     slug: '{{slug}}'
     editor:
       preview: false
     fields:
-      - { label: 'Title', name: 'title', widget: 'string' }
-      - { label: 'Body', name: 'body', widget: 'markdown' }
+      - {
+          label: 'Title',
+          name: 'title',
+          widget: 'string',
+          helper: 'Do not modify this',
+        }
+      - {
+          label: 'Homepage Content 1',
+          name: 'homepage-1',
+          widget: 'markdown',
+          helper: 'Content displayed on left side of homepage (desktop) or top of homepage (tablet/mobile)',
+        }
+      - {
+          label: 'Homepage Content 2',
+          name: 'homepage-2',
+          widget: 'markdown',
+          helper: 'Content displayed on right side of homepage (desktop) or bottom of homepage (tablet/mobile)',
+        }
+      - label: 'Free Chapters Download Box'
+        name: 'free-chapters-download-box'
+        widget: 'object'
+        fields:
+          - label: '"Enter email" text'
+            name: 'text'
+            widget: 'string'
+          - label: 'Free download button'
+            name: 'button'
+            widget: 'string'
+      - { label: 'About Content', name: 'about-1', widget: 'markdown' }
+      - { label: 'Books Content', name: 'books-1', widget: 'markdown' }
+      - { label: 'News Content', name: 'news-1', widget: 'markdown' }

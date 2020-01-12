@@ -34,6 +34,7 @@ body {
   font-size: 36px;
   color: rgba(0, 0, 0, 0.68);
   text-align: center;
+  margin-bottom: 200px;
 }
 
 #content-1 {

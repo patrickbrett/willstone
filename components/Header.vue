@@ -80,10 +80,8 @@ import IconReddit from './icons/IconReddit'
 import SocialLinks from '@/assets/content/social-links/social-links.json'
 
 export default {
-  data() {
-    return {
-      SocialLinks
-    }
+  props: {
+    active: String
   },
   components: {
     ArrowRight,
@@ -92,8 +90,10 @@ export default {
     IconTwitter,
     IconReddit
   },
-  props: {
-    active: String
+  data() {
+    return {
+      SocialLinks
+    }
   }
 }
 </script>
