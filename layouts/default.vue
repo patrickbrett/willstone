@@ -39,7 +39,7 @@ body {
 }
 
 #content-1 {
-  background: #f4f4f4;
+  background: #fff;
   padding: 80px;
   overflow: auto;
   display: flex;
