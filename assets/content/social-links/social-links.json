@@ -2,7 +2,7 @@
   "title": "Social Links",
   "facebook": {
     "url": "https://facebook.com",
-    "enabled": true
+    "enabled": false
   },
   "twitter": {
     "url": "https://twitter.com/Willsimulated",
@@ -10,6 +10,6 @@
   },
   "reddit": {
     "url": "https://reddit.com/r/willstoneauthor",
-    "enabled": true
+    "enabled": false
   }
 }
