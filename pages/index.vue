@@ -10,13 +10,12 @@
           ></div>
           <div class="book-cover-container">
             <img
-              :src="require('@/assets/img/finn-book-cover.jpg')"
+              :src="require('@/assets/img/cover-slim.png')"
               class="book-cover"
             />
           </div>
           <div id="content-1-second">
             <span v-html="parseMarkdown(Content['homepage-2'])"></span>
-            <subscription-form></subscription-form>
           </div>
         </section>
       </div>
@@ -27,14 +26,12 @@
 <script>
 import { markdown } from 'markdown'
 import Header from '../components/Header'
-import SubscriptionForm from '../components/SubscriptionForm'
 
 import Content from '@/assets/content/content/content.json'
 
 export default {
   components: {
-    siteHeader: Header,
-    subscriptionForm: SubscriptionForm
+    siteHeader: Header
   },
   methods: {
     parseMarkdown(content) {
